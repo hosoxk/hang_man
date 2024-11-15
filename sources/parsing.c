@@ -12,7 +12,7 @@ char	*check_args(int argc, char **argv)
 	word = malloc(ft_strlen(argv[1] + 1));
 	if (!word)
 		return (perror("Memory allocation chosen word failed"), NULL);
-	ft_strlcpy(word, argv[1], ft_strlen(argv[1] + 1));
+	ft_strlcpy(word, argv[1], ft_strlen(argv[1]) + 1);
 	ft_printf("Chosen word = %s\n", word);
 	return (word);
 }
