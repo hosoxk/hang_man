@@ -11,7 +11,8 @@ LIBFT_DIR = ./include/libft
 #source and object files
 SRC_FILES = $(SRC_DIR)/main.c \
 		$(SRC_DIR)/parsing.c \
-		$(SRC_DIR)/generate_word.c
+		$(SRC_DIR)/generate_word.c \
+		$(SRC_DIR)/free.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 

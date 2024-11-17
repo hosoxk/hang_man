@@ -18,13 +18,17 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <time.h>
+#include <string.h>
 
 typedef struct	s_word
 {
 	char	*str;
+	char	*matrice;
 }	t_word;
 
 char	*check_args(int argc, char **argv);
 char	*get_random_word(void);
+bool	init_word(t_word *word);
+void	free_data(t_word *word);
 
 # endif

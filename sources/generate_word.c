@@ -1,5 +1,18 @@
 #include "../include/hang_man.h"
 
+bool	init_word(t_word *word)
+{
+	size_t	length;
+
+	length = ft_strlen(word->str);
+	if (!(word->matrice = malloc(sizeof (char) * (length + 1))))
+		return (false);
+	memset(word->matrice, '_', length);
+	word->matrice[length] = '\0';
+	ft_printf("word matrice = %s\n", word->matrice);
+	return (true);
+}
+
 static char	*get_random_line(FILE *file)
 {
 	int	line_count;
@@ -23,7 +36,7 @@ static char	*get_random_line(FILE *file)
 		*newline_pos = '\0';
 	random_word = malloc(ft_strlen(lines) + 1);
 	if (!random_word)
-		return (perror("Memory allocation random word failed\n"), NULL);
+		return (perror("Memory allocation random word failed"), NULL);
 	ft_strlcpy(random_word, lines, ft_strlen(lines) + 1);
 	return (random_word);
 }
@@ -37,7 +50,7 @@ char	*get_random_word(void)
 	if (!(file = fopen(FILENAME, "r")))
 		return (perror("Failed to open file"), NULL);
 	if (!(word = get_random_line(file)))
-		return (fclose(file), ft_printf("Error getting retrieving random line\n"), NULL);
+		return (fclose(file), ft_printf("Error retrieving random line\n"), NULL);
 	fclose(file);
 	ft_printf("Random word = %s\n", word);
 	return (word);
