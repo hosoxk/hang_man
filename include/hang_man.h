@@ -19,16 +19,21 @@
 #include <stdio.h>
 #include <time.h>
 #include <string.h>
+#include <readline/readline.h>
 
 typedef struct	s_word
 {
 	char	*str;
 	char	*matrice;
+	int	strikes;
+	bool	entered_corr_c;
 }	t_word;
 
 char	*check_args(int argc, char **argv);
 char	*get_random_word(void);
 bool	init_word(t_word *word);
 void	free_data(t_word *word);
+bool	check_input(t_word *word, char *input);
+bool	check_matrice(t_word *word);
 
 # endif

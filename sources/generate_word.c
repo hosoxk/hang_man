@@ -10,6 +10,8 @@ bool	init_word(t_word *word)
 	memset(word->matrice, '_', length);
 	word->matrice[length] = '\0';
 	ft_printf("word matrice = %s\n", word->matrice);
+	word->strikes = 0;
+	word->entered_corr_c = true;
 	return (true);
 }
 

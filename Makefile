@@ -2,6 +2,7 @@
 NAME = hang_man
 CC = cc
 CFLAGS = -g3 -Wall -Werror -Wextra
+PROJECTFLAGS = -lreadline
 MAKEFLAGS += -s
 
 #directories
@@ -12,7 +13,8 @@ LIBFT_DIR = ./include/libft
 SRC_FILES = $(SRC_DIR)/main.c \
 		$(SRC_DIR)/parsing.c \
 		$(SRC_DIR)/generate_word.c \
-		$(SRC_DIR)/free.c
+		$(SRC_DIR)/free.c \
+		$(SRC_DIR)/check_input.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
@@ -30,7 +32,7 @@ all: $(LIBFT) $(NAME)
 #link executables
 $(NAME): $(OBJ_FILES) $(LIBFT)
 	@echo "$(YELLOW)Linking $(NAME)...$(RESET)"
-	@$(CC) $(CFLAGS) $(OBJ_FILES) $(LIBFT) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ_FILES) $(LIBFT) -o $(NAME) $(PROJECTFLAGS)
 	@echo "$(GREEN)Compilation successfull!$(RESET)"
 
 %.o: %.c
