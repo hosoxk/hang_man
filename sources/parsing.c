@@ -10,13 +10,11 @@ char	*check_args(int argc, char **argv)
 	if (!(ft_strcmp(argv[1], "random")))
 	{
 		word = get_random_word();
-		ft_printf("Random word = %s\n", word);
 		return (word);
 	}
 	word = malloc(sizeof (char) * (ft_strlen(argv[1]) + 1));
 	if (!word)
 		return (perror("Memory allocation chosen word failed"), NULL);
 	ft_strlcpy(word, argv[1], ft_strlen(argv[1]) + 1);
-	ft_printf("Chosen word = %s\n", word);
 	return (word);
 }

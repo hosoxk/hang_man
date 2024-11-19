@@ -54,6 +54,5 @@ char	*get_random_word(void)
 	if (!(word = get_random_line(file)))
 		return (fclose(file), ft_printf("Error retrieving random line\n"), NULL);
 	fclose(file);
-	ft_printf("Random word = %s\n", word);
 	return (word);
 }
