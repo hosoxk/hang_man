@@ -7,13 +7,13 @@ int	main(int argc, char **argv)
 
 	if (!(word.str = check_args(argc, argv)))
 		return (ft_printf("Correct usage: enter \"random\" or enter own word\n"), 1);
+	print_header();
 	init_word(&word);
 	input = NULL;
 	while (1)
 	{
 		if (check_matrice(&word))
 		{
-			ft_printf("%s\n", word.str);
 			break ;
 		}
 		input = readline("Enter letter or \"exit\"\n");

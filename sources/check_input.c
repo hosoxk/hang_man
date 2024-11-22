@@ -11,6 +11,7 @@ bool	check_matrice(t_word *word)
 			return (false);
 		i++;
 	}
+	print_succes();
 	return (true); //word completed
 }
 
@@ -52,6 +53,7 @@ static void	check_strikes(t_word *word)
 		case 5:
 			ft_printf("____\n|/   |\n|   (_)\n|   \\|/\n|    |\n|   / \\\n|\n|_____\n");
 			free_data(word);
+			print_game_over();
 			exit(0);
 	}
 }

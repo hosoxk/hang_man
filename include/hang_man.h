@@ -35,5 +35,8 @@ bool	init_word(t_word *word);
 void	free_data(t_word *word);
 bool	check_input(t_word *word, char *input);
 bool	check_matrice(t_word *word);
+void	print_header(void);
+void	print_game_over(void);
+void	print_succes(void);
 
 # endif

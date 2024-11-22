@@ -14,7 +14,8 @@ SRC_FILES = $(SRC_DIR)/main.c \
 		$(SRC_DIR)/parsing.c \
 		$(SRC_DIR)/generate_word.c \
 		$(SRC_DIR)/free.c \
-		$(SRC_DIR)/check_input.c
+		$(SRC_DIR)/check_input.c \
+		$(SRC_DIR)/headers.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
