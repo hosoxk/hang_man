@@ -1,5 +1,6 @@
 #include "../include/hang_man.h"
 
+//using printf instead of ft_printf because of "\"
 void	print_header(void)
 {
 	printf(" _____                          \n");
